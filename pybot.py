@@ -1,7 +1,9 @@
 from random import randint
 import sys
+from time import sleep
 
 while 1:
+  sleep(0.01)
   l = sys.stdin.readline().strip()
   if l == "ready?":
     print "ready!"

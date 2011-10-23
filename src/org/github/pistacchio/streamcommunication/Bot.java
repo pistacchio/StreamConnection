@@ -81,6 +81,10 @@ public class Bot
         }
     }
 
+    public void kill()
+    {
+        this.process.destroy();
+    }
     /*
     public String tell(String msg)
     {

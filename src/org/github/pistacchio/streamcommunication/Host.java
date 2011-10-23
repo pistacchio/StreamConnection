@@ -11,6 +11,17 @@ public class Host {
     {
         botList = new ArrayList<Bot>();
 
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            public void  run()
+            {
+                for (int i = 0; i < botList.size(); i++)
+                {
+                    Bot bot = botList.get(i);
+                    bot.kill();
+                }
+            }
+        });
+
         // loads up the bots!
         for (int i = 0; i < args.length; i++)
         {
