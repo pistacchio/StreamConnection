@@ -26,8 +26,15 @@ public class Host {
 
                 String ready = "";
                 if (!bot.isReady()) ready = " not";
-
                 System.out.println("Bot #" + i + ready + " ready.");
+                
+                List<String> code = bot.generateCode();
+
+                for (int ii = 0; ii < code.size(); ii++)
+                {
+                    System.out.println(code.get(ii));
+                }
+
             }
         }
         catch (Exception ex)

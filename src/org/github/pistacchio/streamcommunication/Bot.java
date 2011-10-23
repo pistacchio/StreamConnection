@@ -1,6 +1,7 @@
 package org.github.pistacchio.streamcommunication;
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -39,6 +40,28 @@ public class Bot
         {
             return false;
         }
+    }
+
+    public List<String> generateCode()
+    {
+      try
+      {
+        List<String> code = new ArrayList<String>();
+        
+        this.input.write("generate code");
+        this.input.newLine();
+        this.input.flush();
+        for (int i = 0; i < 5; i++)
+        {
+          code.add(this.output.readLine());
+        }
+
+        return code;
+      }
+      catch (IOException ex)
+      {
+        return null;
+      }
     }
 
     public boolean isReady()

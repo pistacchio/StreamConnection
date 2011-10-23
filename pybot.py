@@ -27,7 +27,7 @@ while 1:
         print "%d %d" % (x, y)
         sys.stdout.flush()
         break;
-  if l == 'bye!'
+  if l == 'bye!':
     print 'bye!'
     sys.stdout.flush()
     sys.exit(0)
