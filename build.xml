@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<project name="org.github.pistacchio.streamcommunication" default="build/" basedir=".">
+  <target name="compile">
+     <mkdir dir="build/classes"/>
+    <javac srcdir="src/" destdir="build/classes/" debug="true" includes="**/*.java" />
+  </target>
+  
+  <target name="jar">
+      <mkdir dir="build/jar"/>
+      <jar destfile="build/jar/Host.jar" basedir="build/classes">
+          <manifest>
+              <attribute name="Main-Class" value="org.github.pistacchio.streamcommunication.Host"/>
+          </manifest>
+      </jar>
+  </target>
+  
+</project>
