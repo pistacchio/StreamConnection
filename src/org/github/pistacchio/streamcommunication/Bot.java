@@ -18,6 +18,25 @@ public class Bot
   private BufferedReader output;
   private BufferedWriter input;
 
+  // extends BufferedWriter by adding writeln, that writes to the buffer appending a line break and flushing the stream
+  class BufferedWriter extends java.io.BufferedWriter
+  {
+    public BufferedWriter(OutputStreamWriter outputStreamWriter)
+    {
+      super(outputStreamWriter);
+    }
+
+    public void writeln(String s)
+    {
+      try
+      {
+        super.write(s + "\n");
+        super.flush();
+      }
+      catch (IOException ex) {}
+    }
+  }
+
   public Bot(String command)
   {
     this.command = command;
@@ -56,9 +75,7 @@ public class Bot
     {
       List<String> code = new ArrayList<String>();
 
-      this.input.write("generate code");
-      this.input.newLine();
-      this.input.flush();
+      this.input.writeln("generate code");
       for (int i = 0; i < 5; i++)
       {
         String c = this.output.readLine();
@@ -76,25 +93,51 @@ public class Bot
     }
   }
 
-  // asks the bod if it's ready
+  // provides the bot with a five rows code and asks it to find the position of '#'
+  public String[] findCode(List<String> code)
+  {
+    try
+    {
+      this.input.writeln("find code");
+      for (String row : code)
+        this.input.writeln(row);
+
+      String foundCodeRaw = this.output.readLine();
+      String[] foundCode = foundCodeRaw.split(" ");
+      if (foundCode.length != 2) return null;
+
+      return foundCode;
+    }
+    catch (IOException ex)
+    {
+      return null;
+    }
+  }
+
+  // asks the bot if it's ready
   public boolean isReady()
   {
       try
       {
-        this.input.write("ready?");
-        this.input.newLine();
-        this.input.flush();
+        this.input.writeln("ready?");
 
         String out = this.output.readLine();
         if (out != null)
           return (out.equals("ready!"));
         else
-          throw new IOException();
+          return false;
       }
       catch (IOException ex)
       {
         return false;
       }
+  }
+
+  // sends 'bye!' and expects 'bye!'
+  public boolean goodbye()
+  {
+    this.input.writeln("bye!");
+    try { return this.output.readLine() == "bye!"; } catch (IOException ex) { return false;}
   }
 
   public void kill()

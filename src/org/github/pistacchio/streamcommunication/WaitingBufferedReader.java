@@ -21,6 +21,7 @@ public class WaitingBufferedReader extends BufferedReader
     this.waitingTime = waitingTime;
   }
 
+  // like super.readLine(), but waits at most this.waitingTime milliseconds for a reply or returns null.
   @Override
   public String readLine()
   {
@@ -43,7 +44,7 @@ public class WaitingBufferedReader extends BufferedReader
     thread.start();
 
     try {
-      synchronized (thread){ thread.wait(waitingTime); }
+      synchronized (thread){ thread.wait(this.waitingTime); }
     } catch (InterruptedException e) {
       e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
     }
