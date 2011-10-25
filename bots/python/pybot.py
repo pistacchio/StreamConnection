@@ -2,13 +2,20 @@ from random import randint
 import sys
 from time import sleep
 
+# loops until received action 'bye!'
 while 1:
+  # sleeps some milliseconds not be cpu hungry
   sleep(0.01)
+  
+  # reads input
   l = sys.stdin.readline().strip()
+  
   if l == "ready?":
     print "ready!"
     sys.stdout.flush()
   if l == 'generate code':
+    # generates the code by first making a string of 25 '.', setting '#' at a 
+    #   random position and the splitting it in chunks of 5 chars
     code_as_string = ['.' for x in range(25)]
     sharp_position = randint(0, 24)
     code_as_string[sharp_position] = '#'

@@ -137,7 +137,7 @@ public class Bot
   public boolean goodbye()
   {
     this.input.writeln("bye!");
-    try { return this.output.readLine() == "bye!"; } catch (IOException ex) { return false;}
+    try { return this.output.readLine().equals("bye!"); } catch (IOException ex) { return false;}
   }
 
   public void kill()
