@@ -1,3 +1,5 @@
+#!/usr/local/bin/perl
+
 use Switch;
 
 $|++;
@@ -25,7 +27,10 @@ while (<STDIN>)
         $code = $code . <STDIN>
       }
       $code =~ s/\n//g;
-      print "$code"
+      $sharp = index($code, '#');
+      $y = int($sharp / 5);
+      $x = $sharp - ($y * 5);
+      print "$x $y\n";
     }    
     case "bye!" { print "bye!\n"; exit(0); }
   }

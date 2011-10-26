@@ -103,6 +103,8 @@ public class Bot
         this.input.writeln(row);
 
       String foundCodeRaw = this.output.readLine();
+      if (foundCodeRaw == null) return null;
+
       String[] foundCode = foundCodeRaw.split(" ");
       if (foundCode.length != 2) return null;
 
