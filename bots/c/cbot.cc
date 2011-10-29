@@ -24,7 +24,7 @@ int getline(char line[])
 main()
 {
   srand(time(NULL));
-  char line[20];
+  char line[20] = "";
 
   while(getline(line) != EOF)
   {

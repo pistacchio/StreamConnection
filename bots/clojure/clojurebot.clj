@@ -1,4 +1,4 @@
-(ns org.github.pistacchio.streamcommunication.bots.clojure
+(ns org.github.pistacchio.streamcommunication.bots.clojure.clojurebot
   (:gen-class))
   
 (defn split5
