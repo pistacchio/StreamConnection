@@ -46,7 +46,7 @@ public class WaitingBufferedReader extends BufferedReader
     try {
       synchronized (thread){ thread.wait(this.waitingTime); }
     } catch (InterruptedException e) {
-      e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+      e.printStackTrace();
     }
 
       if (this.getMessage() != null)
