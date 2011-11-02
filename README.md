@@ -111,6 +111,10 @@ Compile it with `ghc -o haskellbot haskellbot.hs` or run it with `ghc haskellbot
 
 Compile it with `javac JavaBot.java` and run it with `java JavaBot`, as usual.
 
+### Lua
+
+Run it with `lua luabot.lua`
+
 ### Node.js
 
 This version doesn't work. Because of the asynchronous nature of Node, I couldn't "stop 'n wait" for the output to flush and hence this _bot_ suffers from the flush problem. I've been advised to use the library [streamlinejs](https://github.com/Sage/streamlinejs), but I haven't tried it yet.
