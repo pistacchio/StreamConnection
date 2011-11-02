@@ -91,11 +91,11 @@ This is a one to one port of Node.js script, suffering from the same limitations
 
 Just run it with `clisp clispbot.cl`.
 
-### C#
+### CSharp
 
 You can compile it with `csc.exe /out:csharpbot.exe csharpbot.cs` and simply run it as any `.exe` file. I haven't tested it with Mono, but it should work out of the box.
 
-### F#
+### FSharp
 
 You can compile it with `fsc.exe /out:csharpbot.exe csharpbot.cs` and simply run it as any `.exe` file. I haven't tested it with Mono, but it should work out of the box.
 
