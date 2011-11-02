@@ -150,3 +150,7 @@ Run it with `ruby rubybot.rb`. Thanks to `sort_by { rand }` and `each_slice(N)` 
 ### Scala
 
 Either run it with `scala ScalaBot.scala` or compile it to a standard java class with `scalac ScalaBot.scala`.
+
+### Tcl
+
+Execute with `tclsh tclbot.tcl`
