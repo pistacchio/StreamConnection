@@ -1,8 +1,8 @@
 # StreamCommunication
 
-StreamCommunication is a sample program meant to show how to make programs communicate via `stdin` and `stdout`.
+StreamCommunication is a sample program meant to show how to make programs communicate via `stdin` and `stdout`. This is a very cheap and _unixy_ way of writing application plugins.
 
-I got inspired by this year's [aichallenge](http://aichallenge.org/), an online competition for programmers where contendent's provided _bots_ (programs) challenge each other in a virtual arena. 
+I got inspired by this year's [aichallenge](http://aichallenge.org/), an online competition for programmers where contendents' provided _bots_ (programs) challenge each other in a virtual arena. 
 
 I provide a host written in Java and some _bots_ written in various languages I use.
 
@@ -14,7 +14,7 @@ To keep things simple, the task that the bots have to accomplish (and the protoc
 
 `ready?` -> must reply with `ready!`
 `bye!` -> must reply with `bye!` and exit
-`generate code` -> must output 5 lines of each with 5 dots and one randomly placed sharp. Examples of valide codes:
+`generate code` -> must output 5 lines of each with 5 dots and one randomly placed sharp. Examples of valid codes:
 
      .....     .....     .....     .....     ...#.
      ...#.     .....     .....     .....     .....
@@ -64,7 +64,7 @@ The Host program, given two bots as arguments, launches two processes. Let's cal
 
 As a general note, if you launch the bots from withing a script (like in `runhost.sh`), you may encounter a problem with the bot writing to `stdout` but its stdout kept from being flushed. To overcome this problem, where possible, I forced the flush of standard output.
 
-I mostly rushed the bots out and my knowled of the various programming languages I used it varied, so some solution may be more elegant than other (even if I moslty just rewrote the same program over and over trying to include programming languages peculiarities). Feel free to contribute better solutions!
+I mostly rushed the bots out and my knowledge of the various programming languages I used it varied, so some solution may be more elegant than other (even if I mostly just rewrote the same program over and over trying to include programming languages peculiarities). Feel free to contribute better solutions!
 
 ### Bash
 
@@ -131,9 +131,13 @@ Run it with `ocaml ocamlbot.cl`.
 
 Run it with `perl perlbot.pl`.
 
+### PHP
+
+Here I use php as a scripting language, away from its more common web environment. Run it with `php phpbot.php` 
+
 ### Powershell
 
-This hasn't been tested throughoutly. Microsoft pretends you to _register_ any script before running it or lower the overall security level. Then powershell scripting doesn't work with MS native scripting and couldn't be launched from within the dos batch I was using for testing. I just got bored and stop testing it. The code should work, by the way (if you manage to just run it!).
+This hasn't been tested thoroughly. Microsoft pretends you to _register_ any script before running it or lower the overall security level. Then powershell scripting doesn't work with MS native scripting and couldn't be launched from within the dos batch I was using for testing. I just got bored and stop testing it. The code should work, by the way (if you manage to just run it!).
 
 ### Python
 

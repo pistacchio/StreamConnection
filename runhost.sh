@@ -3,4 +3,4 @@
   ant compile jar
 #fi
 
-java -jar build/jar/Host.jar "ruby /Users/gu/dev/org.github.pistacchio.streamcommunication/bots/ruby/rubybot.rb" "ruby /Users/gu/dev/org.github.pistacchio.streamcommunication/bots/ruby/rubybot.rb"
+java -jar build/jar/Host.jar "php bots/php/phpbot.php" "php bots/php/phpbot.php"
